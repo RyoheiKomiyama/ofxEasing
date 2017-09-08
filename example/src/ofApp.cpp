@@ -4,7 +4,7 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 	ofSetBackgroundColor(0);
-	positions.resize(5);
+	positions.resize(6);
 	initTime = 0;
 	endPosition = ofGetWidth() - 40;
 
@@ -13,7 +13,8 @@ void ofApp::setup(){
 		"quad",
 		"cubic",
 		"bounce",
-		"back",
+        "back",
+        "back2",
 	};
 }
 
@@ -29,7 +30,7 @@ void ofApp::update(){
 
 	// the back easing equation can receive an extra parameter in the _s functions
 	// that controls how much the easing goes forward or backwards
-	positions[4] = ofxeasing::map_clamp(now, initTime, endTime, 0, endPosition, &ofxeasing::back::easeOut_s, 0.8);
+    positions[4] = ofxeasing::map_clamp(now, initTime, endTime, 0, endPosition, &ofxeasing::back::easeOut_s, 0.8);
 }
 
 //--------------------------------------------------------------
